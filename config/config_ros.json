@@ -44,6 +44,7 @@
   // points_qos             : QoS options for points topic subscription. See imu_qos for details.
   // image_qos              : QoS options for image topic subscription. See imu_qos for details.
   "glim_ros": {
+    "save_pcd": false, // Save point cloud data to PCD files
     // Backend modules
     "enable_local_mapping": true,
     "enable_global_mapping": true,
@@ -54,9 +55,9 @@
     "points_time_offset": 0.0,
     "acc_scale": 1.0,
     // TF config
-    "imu_frame_id": "imu",
-    "lidar_frame_id": "lidar",
-    "base_frame_id": "",
+    "imu_frame_id": "mid360",
+    "lidar_frame_id": "mid360_imu",
+    "base_frame_id": "base_footprint",
     "odom_frame_id": "odom",
     "map_frame_id": "map",
     "publish_imu2lidar": true,
@@ -69,9 +70,9 @@
       // "libimu_validator.so"
     ],
     // Topics
-    "imu_topic": "/livox/imu",
-    "points_topic": "/livox/lidar",
-    "image_topic": "/image",
+    "imu_topic": "/livox/mid360/imu",
+    "points_topic": "/livox/mid360/points",
+    // "image_topic": "/image",
     // QoS options
     "imu_qos": {
       "profile": "sensor_data",
